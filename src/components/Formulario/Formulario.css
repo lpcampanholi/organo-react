@@ -1,0 +1,51 @@
+.formulario {
+    background-color: #F6F6F6;
+    padding: 1em 3em;
+    border-radius: 0.8em;
+    width: 100%;
+    box-shadow: 2px 2px 5px 2px #33333329;
+}
+
+.titulo {
+    font-family: 'Prata', serif;
+    font-weight: 400;
+}
+
+.campo {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1em 0;
+}
+
+.entrada {
+    width: 100%;
+    border: none;
+    padding: 1em 0.5em;
+    box-shadow: 2px 2px 5px 1px #33333321;
+}
+
+.entrada:focus {
+    outline: none;
+    box-shadow: 2px 2px 5px 1px #6278f761;
+}
+
+.rotulo {
+    font-weight: 700;
+    font-size: 0.8em;
+    margin-bottom: 0.5em;
+}
+
+.botao {
+    color:#F6F6F6;
+    background-color: #6278F7;
+    padding: 1em;
+    border: none;
+    border-radius: 0.4em;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 0.8em;
+}
+
+.botao:hover {
+    background-color: #485dd7;
+}
