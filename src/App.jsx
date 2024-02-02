@@ -1,10 +1,11 @@
-import Formulario from "./components/Formulario/Formulario";
-import Header from "./components/Header/Header";
+import Banner from "./components/Banner";
+import Formulario from "./components/Formulario";
 
 function App() {
+
   return (
     <div>
-      <Header />
+      <Banner />
       <Formulario />
     </div>
   );
