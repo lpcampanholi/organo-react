@@ -4,7 +4,7 @@ import ListaSuspensa from '../ListaSuspensa';
 import Botao from '../Botao';
 import { useState } from 'react';
 
-const Formulario = (props, { aoSubmeter }) => {
+const Formulario = (props) => {
 
   const [nome, setNome] = useState();
   const [cargo, setCargo] = useState();
@@ -19,18 +19,23 @@ const Formulario = (props, { aoSubmeter }) => {
       imagem,
       time
     };
-    aoSubmeter(colaborador);
+    props.onAdicionarColaborador(colaborador);
+    setNome('');
+    setCargo('');
+    setImagem('');
+    setTime('');
   }
 
   return (
-    <section onSubmit={aoClicar} className="formulario">
-      <form>
+    <section className="formulario">
+      <form onSubmit={aoClicar}>
         <h2>Preencha os dados para criar o card do colaborador.</h2>
 
         <CampoTexto
           label="Nome"
           placeholder="Digite seu nome"
           obrigatorio={true}
+          valor={nome}
           aoAtualizar={(e) => setNome(e.target.value)}
         />
 
@@ -38,19 +43,22 @@ const Formulario = (props, { aoSubmeter }) => {
           label="Cargo"
           placeholder="Digite seu cargo"
           obrigatorio={true}
+          valor={cargo}
           aoAtualizar={(e) => setCargo(e.target.value)}
         />
 
         <CampoTexto
           label="Imagem"
           placeholder="Insira o endereço da imagem"
-          obrigatorio={true}
+          valor={imagem}
           aoAtualizar={(e) => setImagem(e.target.value)}
         />
 
         <ListaSuspensa
           label="Time"
-          lista={props.grupo}
+          opcoes={props.lista}
+          obrigatorio={true}
+          valor={time}
           aoAtualizar={(e) => setTime(e.target.value)}
         />
 

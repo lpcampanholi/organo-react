@@ -1,9 +1,17 @@
+import { useState } from "react";
 import Banner from "./components/Banner";
 import Formulario from "./components/Formulario";
+import Time from "./components/Time";
 
 const App = () => {
 
-  const grupo = [
+  const [colaboradores, setColaboradores] = useState([]);
+
+  const adicionaColaborador = (colaborador) => {
+    setColaboradores((prevColaboradores) => [...prevColaboradores, colaborador]);
+  };
+
+  const times = [
     'Programação',
     'Front-End',
     'Data Sciense',
@@ -16,7 +24,13 @@ const App = () => {
   return (
     <div>
       <Banner />
-      <Formulario grupo={grupo} />
+      <Formulario
+        lista={times}
+        onAdicionarColaborador={adicionaColaborador}
+      />
+      <Time
+        lista={colaboradores}
+      />
     </div>
   );
 }
