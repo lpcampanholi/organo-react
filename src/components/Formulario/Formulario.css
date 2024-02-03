@@ -16,23 +16,3 @@
     font-family: 'Prata', serif;
     font-weight: 400;
 }
-
-.formulario button {
-    color:#F6F6F6;
-    background-color: #6278F7;
-    padding: 1em;
-    border: none;
-    border-radius: 0.4em;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 0.8em;
-}
-
-.formulario button:hover {
-    background-color: #485dd7;
-}
-
-.formulario button:focus {
-    outline: none;
-    background-color: #485dd7;
-}

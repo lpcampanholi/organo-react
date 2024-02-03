@@ -5,10 +5,10 @@ const ListaSuspensa = (props) => {
   return (
     <div className="lista-suspensa">
       <label>{props.label}
-        <select name={props.label} id={props.label}>
-          <option id={0} value="">Selecione</option>
-          {props.lista.map((elemento, i) => (
-            <option value={elemento.toLowerCase()} id={i + 1}>{elemento}</option>
+        <select name={props.label} id={props.label} onChange={props.aoAtualizar}>
+          <option key={0} value="">Selecione</option>
+          {props.lista.map((item, i) => (
+            <option value={item} key={i + 1}>{item}</option>
           ))}
         </select>
       </label>
