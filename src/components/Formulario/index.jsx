@@ -4,7 +4,7 @@ import ListaSuspensa from '../ListaSuspensa';
 import Botao from '../Botao';
 import { useState } from 'react';
 
-const Formulario = (props) => {
+const Formulario = ({ lista, onAdicionarColaborador }) => {
 
   const [nome, setNome] = useState();
   const [cargo, setCargo] = useState();
@@ -19,7 +19,7 @@ const Formulario = (props) => {
       imagem,
       time
     };
-    props.onAdicionarColaborador(colaborador);
+    onAdicionarColaborador(colaborador);
     setNome('');
     setCargo('');
     setImagem('');
@@ -50,13 +50,14 @@ const Formulario = (props) => {
         <CampoTexto
           label="Imagem"
           placeholder="Insira o endereço da imagem"
+          obrigatorio={true}
           valor={imagem}
           aoAtualizar={(e) => setImagem(e.target.value)}
         />
 
         <ListaSuspensa
           label="Time"
-          itens={props.lista}
+          itens={lista}
           obrigatorio={true}
           valor={time}
           aoAtualizar={(e) => setTime(e.target.value)}

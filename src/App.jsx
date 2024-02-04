@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Banner from "./components/Banner";
 import Formulario from "./components/Formulario";
-import Time from "./components/Time/Time";
+import Time from "./components/Time";
+import Rodape from "./components/Rodape";
 
 const App = () => {
 
@@ -52,7 +53,10 @@ const App = () => {
   return (
     <div>
       <Banner />
-      <Formulario lista={times.map(item => item.nome)} onAdicionarColaborador={adicionaColaborador} />
+      <Formulario
+        lista={times.map(item => item.nome)}
+        onAdicionarColaborador={adicionaColaborador}
+      />
       {times.map((time, i) => {
         return (
           <Time
@@ -60,9 +64,11 @@ const App = () => {
             titulo={time.nome}
             corDestaque={time.corPrimaria}
             corDeFundo={time.corSecundaria}
+            colaboradores={colaboradores.filter((colaborador) => colaborador.time === time.nome)}
           />
         )
       })}
+      <Rodape />
     </div>
   );
 }
