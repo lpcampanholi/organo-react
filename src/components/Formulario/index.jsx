@@ -56,7 +56,7 @@ const Formulario = (props) => {
 
         <ListaSuspensa
           label="Time"
-          opcoes={props.lista}
+          itens={props.lista}
           obrigatorio={true}
           valor={time}
           aoAtualizar={(e) => setTime(e.target.value)}

@@ -1,0 +1,22 @@
+.card {
+    text-align: center;
+    background-color: #F6F6F6;
+    width: 25%;
+    box-shadow: 2px 2px 5px 2px #33333329;
+    border-radius: 0.8em;
+}
+
+.cabecalho {
+    background-color: #57C278;
+    box-sizing: border-box;
+}
+
+.card img {
+    border-radius: 100%;
+    width: 50%;
+    margin-top: 2em;
+}
+
+.card h4 {
+    color: #6278F7;
+}
